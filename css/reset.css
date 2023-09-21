@@ -132,4 +132,5 @@ button {
   /* Browsers have different default form fonts */
   font-size: inherit;
   font-family: inherit;
+  color: inherit;
 }

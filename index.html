@@ -4,15 +4,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
 
+    <!-- LINK FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <!-- LINK CSS -->
     <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main_style.css" />
   </head>
   <body>
-    <header>logo, input pra procurar as coisa</header>
+    <header>
+      <div class="main-logo">
+        <span class="material-symbols-outlined"> cloud </span>
+        <h1>Weather App</h1>
+      </div>
+
+      <div class="wrapper-search">
+        <input type="text" name="" id="" placeholder="Search for your city" />
+        <button><span class="material-symbols-outlined"> search </span></button>
+      </div>
+    </header>
 
     <main>
-      <section>display o dia selecionado</section>
+      <!-- <section>display o dia selecionado</section>
       <section>forestcast each hour</section>
-      <section>forestcast next 9 days</section>
+      <section>forestcast next 9 days</section> -->
     </main>
   </body>
   <script src="./dist/main.js"></script>
