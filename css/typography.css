@@ -1,0 +1,29 @@
+.main-ttl {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.main-subt {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+._small {
+  font-size: 12px;
+}
+
+._medium {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+._big {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+._alEnd {
+  font-size: 10px;
+  text-align: end;
+}

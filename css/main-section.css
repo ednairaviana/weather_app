@@ -1,0 +1,17 @@
+.main-section {
+  padding: 10px 20px;
+}
+
+.wr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.wr-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 10px;
+}

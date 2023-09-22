@@ -20,6 +20,10 @@
     <!-- LINK CSS -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main_style.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/typography.css" />
+    <link rel="stylesheet" href="./css/main-section.css" />
+    <link rel="stylesheet" href="./css/wrap-icon.css" />
   </head>
   <body>
     <header>
@@ -47,49 +51,6 @@
           <p class="_small">Region - country</p>
         </div>
 
-        <div class="icon">
-          <img class="main-icon" src="./116.png" alt="" />
-          <p class="_medium">Overcast</p>
-        </div>
-
-        <div class="wrap_icon">
-          <p class="_small _alEnd">temperature</p>
-          <div class="icon">
-            <img
-              src="./assets/weather_icons/icons8-thermometer-50.png"
-              alt=""
-            />
-            <p class="_medium">45°C</p>
-          </div>
-        </div>
-
-        <div class="wrap_icon">
-          <p class="_small _alEnd">feels like</p>
-          <div class="icon">
-            <img
-              src="./assets/weather_icons/icons8-thermometer-50.png"
-              alt=""
-            />
-            <p class="_medium">30°C</p>
-          </div>
-        </div>
-
-        <div class="wrap_icon">
-          <p class="_small _alEnd">humidity</p>
-          <div class="icon">
-            <img src="./assets/weather_icons/icons8-drop-50.png" alt="" />
-            <p class="_medium">100%</p>
-          </div>
-        </div>
-
-        <div class="wrap_icon">
-          <p class="_small _alEnd">wind speed</p>
-          <div class="icon">
-            <img src="./assets/weather_icons/icons8-wind-50.png" alt="" />
-            <p class="_medium">4<span class="_small">km/h</span></p>
-          </div>
-        </div>
-
         <div class="wrap_icon">
           <p class="_small _alEnd">12/12/2023</p>
           <div class="icon">
@@ -101,14 +62,104 @@
     </header>
 
     <main>
-      <section class="main-section">
-        <!-- location, clock, date, temp, icon -> não alterável(somente alterando a
-          cidade) -> current -->
+      <div class="wrapper-section">
+        <section class="main-section">
+          <div class="wr-header">
+            <div>
+              <h1 class="main-subt">Wednesday</h1>
+              <p>12/12/2023</p>
+            </div>
 
-        <!-- <div>day, astro, forecast day</div> -->
-      </section>
+            <div class="icon">
+              <img class="main-icon" src="./116.png" alt="" />
+              <p class="_medium">Overcast</p>
+            </div>
+          </div>
 
-      <section class="aside-section">forestcast each hour</section>
+          <div class="wr-content">
+            <div class="wrap_icon">
+              <p class="_small _alEnd">temperature</p>
+              <div class="icon">
+                <img
+                  src="./assets/weather_icons/icons8-thermometer-50.png"
+                  alt=""
+                />
+                <p class="_medium">45°C</p>
+              </div>
+            </div>
+
+            <div class="wrap_icon">
+              <p class="_small _alEnd">feels like</p>
+              <div class="icon">
+                <img
+                  src="./assets/weather_icons/icons8-thermometer-50.png"
+                  alt=""
+                />
+                <p class="_medium">30°C</p>
+              </div>
+            </div>
+
+            <div class="wrap_icon">
+              <p class="_small _alEnd">max</p>
+              <div class="icon">
+                <img
+                  src="./assets/weather_icons/icons8-thermometer-up-50.png"
+                  alt=""
+                />
+                <p class="_medium">42°C</p>
+              </div>
+            </div>
+
+            <div class="wrap_icon">
+              <p class="_small _alEnd">min</p>
+              <div class="icon">
+                <img
+                  src="./assets/weather_icons/icons8-thermometer-down-50.png"
+                  alt=""
+                />
+                <p class="_medium">25°C</p>
+              </div>
+            </div>
+
+            <div class="wrap_icon">
+              <p class="_small _alEnd">sunrise</p>
+              <div class="icon">
+                <img
+                  src="./assets/weather_icons/icons8-sunrise-50.png"
+                  alt=""
+                />
+                <p class="_medium">06:00am</p>
+              </div>
+            </div>
+
+            <div class="wrap_icon">
+              <p class="_small _alEnd">sunset</p>
+              <div class="icon">
+                <img src="./assets/weather_icons/icons8-sunset-50.png" alt="" />
+                <p class="_medium">05:00pm</p>
+              </div>
+            </div>
+
+            <div class="wrap_icon">
+              <p class="_small _alEnd">humidity</p>
+              <div class="icon">
+                <img src="./assets/weather_icons/icons8-drop-50.png" alt="" />
+                <p class="_medium">100%</p>
+              </div>
+            </div>
+
+            <div class="wrap_icon">
+              <img src="./assets/weather_icons/icons8-wind-50.png" alt="" />
+              <div class="icon">
+                <p class="_small _alEnd">wind speed</p>
+                <p class="_medium">4<span class="_small">km/h</span></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="aside-section">forestcast each hour</section>
+      </div>
 
       <section class="footer-section">forestcast next 9 days</section>
     </main>

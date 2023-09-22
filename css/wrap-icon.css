@@ -1,0 +1,23 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+.icon img {
+  width: 30px;
+}
+
+.icon .main-icon {
+  width: 55px;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+}
