@@ -58,7 +58,6 @@ function getDay(date) {
 
 function renderFooterComponents() {
   const days = dataBase.forecast.forecastday;
-  console.log(days);
 
   days.forEach((element) => {
     const day = getDay(element.date);
@@ -68,9 +67,7 @@ function renderFooterComponents() {
     const chanceRain = element.day.daily_chance_of_rain;
 
     createFooterComponent(day, date, icon, temp, chanceRain);
-
-    console.log(chanceRain);
   });
 }
 
-export { renderFooterComponents };
+export { renderFooterComponents, getDate };
