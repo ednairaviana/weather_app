@@ -36,6 +36,10 @@
   width: 55px;
 }
 
+.main-icon {
+  width: 55px;
+}
+
 .clock {
   display: flex;
   align-items: center;

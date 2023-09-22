@@ -26,8 +26,10 @@ body {
 
 main {
   height: calc(79vh - 20px);
-
   margin: 0 30px;
+
+  display: flex;
+  gap: 20px;
 }
 
 .wrapper-section {
@@ -48,8 +50,3 @@ main {
 /* ASIDE-SECTION */
 
 /* FOOTER-SECTION */
-
-.footer-section {
-  grid-column: 1/3;
-  background-color: #151515;
-}

@@ -1,0 +1,32 @@
+.footer-section {
+  width: 30%;
+  overflow: auto;
+}
+
+.foo-comp {
+  border: 3px solid var(--scd-color);
+  border-left-width: 7px;
+  border-right-width: 7px;
+  border-radius: 30px;
+
+  width: 100%;
+  height: 100px;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.foo-comp:hover {
+  border-color: aliceblue;
+}
+
+.foo-comp:active {
+  opacity: 0.6;
+}
