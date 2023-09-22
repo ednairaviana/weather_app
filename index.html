@@ -23,21 +23,94 @@
   </head>
   <body>
     <header>
-      <div class="main-logo">
-        <span class="material-symbols-outlined"> cloud </span>
-        <h1>Weather App</h1>
+      <!-- MAIN-HEADER -->
+      <div class="main-header">
+        <div class="main-logo">
+          <span class="material-symbols-outlined"> cloud </span>
+          <h1>Weather App</h1>
+        </div>
+
+        <div class="wrapper-search">
+          <input type="text" name="" id="" placeholder="Search for your city" />
+          <button>
+            <span style="font-size: 16px" class="material-symbols-outlined">
+              search
+            </span>
+          </button>
+        </div>
       </div>
 
-      <div class="wrapper-search">
-        <input type="text" name="" id="" placeholder="Search for your city" />
-        <button><span class="material-symbols-outlined"> search </span></button>
+      <!-- SCND-HEADER -->
+      <div class="scnd-header">
+        <div>
+          <h2 class="main-ttl" id="current_city">London</h2>
+          <p class="_small">Region - country</p>
+        </div>
+
+        <div class="icon">
+          <img class="main-icon" src="./116.png" alt="" />
+          <p class="_medium">Overcast</p>
+        </div>
+
+        <div class="wrap_icon">
+          <p class="_small _alEnd">temperature</p>
+          <div class="icon">
+            <img
+              src="./assets/weather_icons/icons8-thermometer-50.png"
+              alt=""
+            />
+            <p class="_medium">45°C</p>
+          </div>
+        </div>
+
+        <div class="wrap_icon">
+          <p class="_small _alEnd">feels like</p>
+          <div class="icon">
+            <img
+              src="./assets/weather_icons/icons8-thermometer-50.png"
+              alt=""
+            />
+            <p class="_medium">30°C</p>
+          </div>
+        </div>
+
+        <div class="wrap_icon">
+          <p class="_small _alEnd">humidity</p>
+          <div class="icon">
+            <img src="./assets/weather_icons/icons8-drop-50.png" alt="" />
+            <p class="_medium">100%</p>
+          </div>
+        </div>
+
+        <div class="wrap_icon">
+          <p class="_small _alEnd">wind speed</p>
+          <div class="icon">
+            <img src="./assets/weather_icons/icons8-wind-50.png" alt="" />
+            <p class="_medium">4<span class="_small">km/h</span></p>
+          </div>
+        </div>
+
+        <div class="wrap_icon">
+          <p class="_small _alEnd">12/12/2023</p>
+          <div class="icon">
+            <img src="./assets/weather_icons/icons8-clock-50.png" alt="" />
+            <p class="_medium">12:00 AM</p>
+          </div>
+        </div>
       </div>
     </header>
 
     <main>
-      <!-- <section>display o dia selecionado</section>
-      <section>forestcast each hour</section>
-      <section>forestcast next 9 days</section> -->
+      <section class="main-section">
+        <!-- location, clock, date, temp, icon -> não alterável(somente alterando a
+          cidade) -> current -->
+
+        <!-- <div>day, astro, forecast day</div> -->
+      </section>
+
+      <section class="aside-section">forestcast each hour</section>
+
+      <section class="footer-section">forestcast next 9 days</section>
     </main>
   </body>
   <script src="./dist/main.js"></script>

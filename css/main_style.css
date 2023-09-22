@@ -14,23 +14,24 @@ body {
   font-family: var(--main-font);
   color: #fff;
   background-color: #151515;
+  font-size: 16px;
 }
 
 /* HEADER */
 
-header {
+.main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  height: 10vh;
+  height: 8vh;
 }
 
 .main-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 20px;
   gap: 2px;
 }
 
@@ -39,12 +40,16 @@ header {
   border: 1px solid white;
   border-radius: 50px;
 
-  display: flex;
-  align-items: center;
-
-  padding-left: 15px;
   width: 250px;
-  height: 33px;
+  height: 25px;
+}
+
+input {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  padding: 5px 15px;
+  padding-right: 32px;
 }
 
 button {
@@ -60,4 +65,74 @@ button {
 
 button:hover {
   opacity: 0.6;
+}
+
+.scnd-header {
+  height: 13vh;
+  margin: 0 30px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-ttl {
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+._small {
+  font-size: 12px;
+}
+
+._medium {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+._alEnd {
+  font-size: 10px;
+  text-align: end;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+.icon img {
+  width: 25px;
+}
+
+.icon .main-icon {
+  width: 55px;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* MAIN */
+
+main {
+  display: grid;
+  height: calc(79vh - 10px);
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 65% 35%;
+}
+
+main > * {
+  border: 1px solid white;
+}
+
+.footer-section {
+  grid-column: 1/3;
 }
