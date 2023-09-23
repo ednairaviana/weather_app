@@ -4,6 +4,7 @@ import { renderFooterComponents } from "./createFooComp";
 import { renderMSComponents } from "./createMainSection";
 import { renderHeader } from "./createHeaderComp";
 import { getDateApi } from "./clock";
+import { changeScale } from "./changeScale";
 
 async function doThings(value) {
   await getData(value);
@@ -13,6 +14,7 @@ async function doThings(value) {
   renderMSComponents("0");
   renderAsideComponent("0");
   renderFooterComponents();
+  changeScale();
 }
 
 export { doThings };

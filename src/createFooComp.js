@@ -1,6 +1,7 @@
 import { dataBase } from "./database";
 import { renderMSComponents } from "./createMainSection";
 import { renderAsideComponent } from "./createAsComp";
+import { farenheit } from "./changeScale";
 
 const footerSection = document.querySelector(".footer-section");
 
@@ -21,7 +22,7 @@ function createFooterComponent(day, date, icon, temp, chanceRain, id) {
               <img src="./assets/weather_icons/icons8-thermometer-50.png" />
               <div class="cont-icon">
                 <p class="_small _alEnd">temperature</p>
-                <p class="_medium-1">${temp}°C</p>
+                <p class="_medium-1">${temp}</p>
               </div>
             </div>
 
@@ -60,8 +61,12 @@ function renderFooterComponents() {
     const day = getDay(element.date);
     const date = getDate(element.date);
     const icon = `https://${element.day.condition.icon}`;
-    const temp = element.day.avgtemp_c;
+    let temp = `${element.day.avgtemp_c}°C`;
     const chanceRain = element.day.daily_chance_of_rain;
+
+    if (farenheit) {
+      temp = `${element.day.avgtemp_f}°F`;
+    }
 
     createFooterComponent(day, date, icon, temp, chanceRain, index);
   });

@@ -1,3 +1,4 @@
+import { farenheit } from "./changeScale";
 import { dataBase } from "./database";
 
 const asideSection = document.querySelector(".aside-section");
@@ -21,7 +22,7 @@ function createAsComp(hour, icon, text, temp, chanceRain) {
                 <img src="./assets/weather_icons/icons8-thermometer-50.png" />
                 <div class="cont-icon">
                   <p class="_small _alEnd">temperature</p>
-                  <p class="_medium">${temp}°C</p>
+                  <p class="_medium">${temp}</p>
                 </div>
               </div>
 
@@ -45,8 +46,12 @@ function renderAsideComponent(index) {
     const hour = element.time.split(" ")[1];
     const icon = `https://${element.condition.icon}`;
     const text = element.condition.text;
-    const temp = element.temp_c;
+    let temp = `${element.temp_c}°C`;
     const chanceRain = element.chance_of_rain;
+
+    if (farenheit) {
+      temp = `${element.temp_f}°F`;
+    }
 
     createAsComp(hour, icon, text, temp, chanceRain);
   });

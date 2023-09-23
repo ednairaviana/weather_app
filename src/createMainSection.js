@@ -1,5 +1,6 @@
 import { dataBase } from "./database";
 import { getDate } from "./createFooComp";
+import { farenheit } from "./changeScale";
 
 const mainSection = document.querySelector(".main-section");
 
@@ -143,21 +144,35 @@ function renderMSComponents(index) {
   const date = getDate(target.date);
   const icon = `https://${target.day.condition.icon}`;
   const text = target.day.condition.text;
-  let temp = target.day.avgtemp_c;
+
+  let temp = `${target.day.avgtemp_c}°C`; ;
   let feelsLike = "-/-";
-  const maxTemp = target.day.maxtemp_c;
-  const minTemp = target.day.mintemp_c;
+  let maxTemp = `${target.day.maxtemp_c}°C`;
+  let minTemp = `${target.day.mintemp_c}°C`;
+
   const chanceRain = target.day.daily_chance_of_rain;
   const precipitation = target.day.totalprecip_mm;
   let windSpeed = "-/-";
   const humidity = target.day.avghumidity;
+
   const sunrise = setHour(target.astro.sunrise);
   const sunset = setHour(target.astro.sunset);
 
+  if (farenheit) {
+    temp = `${target.day.avgtemp_f}°F`;
+    maxTemp = `${target.day.maxtemp_f}°F`;
+    minTemp = `${target.day.mintemp_f}°F`;
+  }
+
   if (index === "0") {
-    temp = dataBase.current.temp_c;
-    feelsLike = dataBase.current.feelslike_c;
     windSpeed = dataBase.current.wind_kph;
+    if (farenheit) {
+      temp = `${dataBase.current.temp_f}°F`;
+      feelsLike =`${dataBase.current.feelslike_f}°F` ;
+    } else {
+      temp = `${dataBase.current.temp_c}°C`;
+      feelsLike = `${dataBase.current.feelslike_c}°C`;
+    }
   }
 
   createMSComponents(
