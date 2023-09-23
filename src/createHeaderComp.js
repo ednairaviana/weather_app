@@ -1,4 +1,3 @@
-import { miliseconds } from "./clock";
 import { getDate } from "./createFooComp";
 import { dataBase } from "./database";
 
@@ -12,11 +11,16 @@ function setHeaderInfo(name, subt, date) {
   currentDate.innerText = date;
 }
 
+function splitDate(date) {
+    const arDate = date.split(" ");
+
+    return arDate[0];
+}
 
 function renderHeader() {
   const name = dataBase.location.name;
   const subt = `${dataBase.location.region} - ${dataBase.location.country}`;
-  const date = getDate(dataBase.location.localtime);
+  const date = getDate(splitDate(dataBase.location.localtime));
 
   setHeaderInfo(name, subt, date);
 }

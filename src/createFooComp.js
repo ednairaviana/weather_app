@@ -33,17 +33,11 @@ function createFooterComponent(day, date, icon, temp, chanceRain) {
 }
 
 function getDate(date) {
-  const fullDate = new Date(date);
-  let day = fullDate.getDate();
-  let month = fullDate.getMonth();
-  const year = fullDate.getFullYear();
+  const fullDate = date.split("-");
 
-  if (month < 10) {
-    month = `0${month}`;
-  }
-  if (day < 10) {
-    day = `0${day}`;
-  }
+  const day = fullDate[2];
+  const month = fullDate[1];
+  const year = fullDate[0];
 
   return `${month}/${day}/${year}`;
 }
