@@ -154,8 +154,6 @@ function renderMSComponents() {
   const sunrise = setHour(target.astro.sunrise);
   const sunset = setHour(target.astro.sunset);
 
-  console.log(target);
-
   createMSComponents(
     title,
     date,
