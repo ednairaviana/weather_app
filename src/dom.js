@@ -17,4 +17,14 @@ async function doThings(value) {
   changeScale();
 }
 
-export { doThings };
+function searchOnClick() {
+  const searchInput = document.querySelector("#search");
+  const btn = document.querySelector("#btn");
+
+  btn.addEventListener("click", () => {
+    doThings(searchInput.value);
+    changeScale();
+  });
+}
+
+export { doThings, searchOnClick };
