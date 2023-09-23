@@ -22,7 +22,7 @@ function createAsComp(hour, icon, text, temp, chanceRain) {
                 <img src="./assets/weather_icons/icons8-thermometer-50.png" />
                 <div class="cont-icon">
                   <p class="_small _alEnd">temperature</p>
-                  <p class="_medium">${temp}</p>
+                  <p class="_medium-1">${temp}</p>
                 </div>
               </div>
 
@@ -30,7 +30,7 @@ function createAsComp(hour, icon, text, temp, chanceRain) {
                 <img src="./assets/weather_icons/icons8-rain-50.png" />
                 <div class="cont-icon">
                   <p class="_small _alEnd">chance of rain</p>
-                  <p class="_medium">${chanceRain}%</p>
+                  <p class="_medium-1">${chanceRain}%</p>
                 </div>
               </div>
             </div>`;
