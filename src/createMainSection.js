@@ -27,7 +27,7 @@ function createMSComponents(
 
             <div class="icon">
               <img class="main-icon" src="${icon}" />
-              <p class="_medium">${text}</p>
+              <p class="_medium-1">${text}</p>
             </div>
           </div>
 
@@ -137,8 +137,8 @@ function setHour(hour) {
   return `${arHour[0]}<span class="_small">${arHour[1]}</span>`;
 }
 
-function renderMSComponents() {
-  const target = dataBase.forecast.forecastday[0];
+function renderMSComponents(index) {
+  const target = dataBase.forecast.forecastday[index];
   const title = getDay(target.date);
   const date = getDate(target.date);
   const icon = target.day.condition.icon;

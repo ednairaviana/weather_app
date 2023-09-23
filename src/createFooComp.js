@@ -1,10 +1,12 @@
 import { dataBase } from "./database";
+import { renderMSComponents } from "./createMainSection";
 
 const footerSection = document.querySelector(".footer-section");
 
-function createFooterComponent(day, date, icon, temp, chanceRain) {
+function createFooterComponent(day, date, icon, temp, chanceRain, id) {
   const footerComponent = document.createElement("div");
   footerComponent.classList.add("foo-comp");
+  footerComponent.setAttribute("data-id", `${id}`);
 
   footerComponent.innerHTML = `<div>
             <p class="_medium">${day}</p>
@@ -13,23 +15,39 @@ function createFooterComponent(day, date, icon, temp, chanceRain) {
 
           <img class="main-icon" src="${icon}" />
 
-          <div class="wrap-icon">
-            <img src="./assets/weather_icons/icons8-thermometer-50.png" />
-            <div class="cont-icon">
-              <p class="_small _alEnd">temperature</p>
-              <p class="_medium">${temp}°C</p>
+ 
+            <div class="wrap-icon">
+              <img src="./assets/weather_icons/icons8-thermometer-50.png" />
+              <div class="cont-icon">
+                <p class="_small _alEnd">temperature</p>
+                <p class="_medium-1">${temp}°C</p>
+              </div>
             </div>
-          </div>
 
-          <div class="wrap-icon">
-            <img src="./assets/weather_icons/icons8-rain-50.png" />
-            <div class="cont-icon">
-              <p class="_small _alEnd">chance of rain</p>
-              <p class="_medium">${chanceRain}%</p>
-            </div>
-          </div>`;
+            <div class="wrap-icon">
+              <img src="./assets/weather_icons/icons8-rain-50.png" />
+              <div class="cont-icon">
+                <p class="_small _alEnd">chance of rain</p>
+                <p class="_medium-1">${chanceRain}%</p>
+              </div>
+            </div>`;
 
   footerSection.insertAdjacentElement("beforeend", footerComponent);
+
+  footerComponent.addEventListener("click", () => {
+    const index = footerComponent.dataset.id;
+    setCurrentComp();
+    renderMSComponents(index);
+  });
+
+  function setCurrentComp() {
+    footerSection.childNodes.forEach((child) => {
+      child.style.opacity = "1";
+      child.style.pointerEvents = "auto";
+    });
+    footerComponent.style.opacity = "0.6";
+    footerComponent.style.pointerEvents = "none";
+  }
 }
 
 function getDate(date) {
@@ -54,14 +72,14 @@ function renderFooterComponents() {
   clearFooterSection();
   const days = dataBase.forecast.forecastday;
 
-  days.forEach((element) => {
+  days.forEach((element, index) => {
     const day = getDay(element.date);
     const date = getDate(element.date);
     const icon = element.day.condition.icon;
     const temp = element.day.avgtemp_c;
     const chanceRain = element.day.daily_chance_of_rain;
 
-    createFooterComponent(day, date, icon, temp, chanceRain);
+    createFooterComponent(day, date, icon, temp, chanceRain, index);
   });
 }
 

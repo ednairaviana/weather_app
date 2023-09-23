@@ -14,7 +14,7 @@ function createAsComp(hour, icon, text, temp, chanceRain) {
             <div class="as-comp-cont">
               <div class="icon">
                 <img class="main-icon" src="${icon}" />
-                <p class="_medium">${text}</p>
+                <p class="_medium-1">${text}</p>
               </div>
 
               <div class="wrap-icon">
