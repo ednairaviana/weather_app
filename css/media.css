@@ -1,0 +1,37 @@
+@media (max-width: 500px) {
+  main {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .wrapper-section {
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 500px;
+    margin-top: 20px;
+  }
+
+  .main-section {
+    margin-bottom: 20px;
+  }
+
+  .as-comp {
+    height: 200px;
+  }
+
+  .as-comp-cont {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    height: auto;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .scnd-header {
+    flex-direction: column;
+    align-items: end;
+    gap: 15px;
+  }
+}

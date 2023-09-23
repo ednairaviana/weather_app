@@ -54,3 +54,9 @@ button:hover {
   align-items: center;
   justify-content: space-between;
 }
+
+.side {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
