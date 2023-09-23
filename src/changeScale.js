@@ -11,20 +11,24 @@ const c = document.querySelector("#c");
 const f = document.querySelector("#f");
 
 function changeScale() {
-    tglBtn.addEventListener("click", ()=> {
-        if (farenheit) {
-            farenheit = false;
-            dot.classList.remove("dot-click");
-        } else {
-            farenheit = true;
-            dot.classList.add("dot-click");
-        }
+  tglBtn.addEventListener("click", () => {
+    if (farenheit) {
+      farenheit = false;
+      dot.classList.remove("dot-click");
+      c.style.color = "#FFF";
+      f.style.color = "gray";
+    } else {
+      farenheit = true;
+      dot.classList.add("dot-click");
+      c.style.color = "gray";
+      f.style.color = "#FFF";
+    }
 
-        renderMSComponents(currentCompIndex);
-        initCurrent();
-        renderAsideComponent(currentCompIndex);
-        renderFooterComponents();
-    })
+    renderMSComponents(currentCompIndex);
+    initCurrent();
+    renderAsideComponent(currentCompIndex);
+    renderFooterComponents();
+  });
 }
 
-export {farenheit, changeScale}
+export { farenheit, changeScale };

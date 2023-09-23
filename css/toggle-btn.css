@@ -20,6 +20,11 @@
 
 .toggle-btn .opt {
   z-index: 10;
+  transition: all 0.5s ease-in-out;
+}
+
+.toggle-btn #f {
+  color: gray;
 }
 
 .toggle-btn .dot {
