@@ -143,16 +143,22 @@ function renderMSComponents(index) {
   const date = getDate(target.date);
   const icon = target.day.condition.icon;
   const text = target.day.condition.text;
-  const temp = target.day.avgtemp_c;
-  const feelsLike = "-/-";
+  let temp = target.day.avgtemp_c;
+  let feelsLike = "-/-";
   const maxTemp = target.day.maxtemp_c;
   const minTemp = target.day.mintemp_c;
   const chanceRain = target.day.daily_chance_of_rain;
   const precipitation = target.day.totalprecip_mm;
-  const windSpeed = "-/-";
+  let windSpeed = "-/-";
   const humidity = target.day.avghumidity;
   const sunrise = setHour(target.astro.sunrise);
   const sunset = setHour(target.astro.sunset);
+
+  if(index === "0") {
+    temp = dataBase.current.temp_c;
+    feelsLike = dataBase.current.feelslike_c;
+    windSpeed = dataBase.current.wind_kph;
+  }
 
   createMSComponents(
     title,
