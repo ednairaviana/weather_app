@@ -1,5 +1,6 @@
 import { dataBase } from "./database";
 import { renderMSComponents } from "./createMainSection";
+import { renderAsideComponent } from "./createAsComp";
 
 const footerSection = document.querySelector(".footer-section");
 
@@ -38,6 +39,8 @@ function createFooterComponent(day, date, icon, temp, chanceRain, id) {
     const index = footerComponent.dataset.id;
     setCurrentComp();
     renderMSComponents(index);
+    renderAsideComponent(index);
+    console.log(footerSection.childNodes);
   });
 
   function setCurrentComp() {
@@ -48,6 +51,35 @@ function createFooterComponent(day, date, icon, temp, chanceRain, id) {
     footerComponent.style.opacity = "0.6";
     footerComponent.style.pointerEvents = "none";
   }
+}
+
+function renderFooterComponents() {
+  clearFooterSection();
+
+  const days = dataBase.forecast.forecastday;
+  days.forEach((element, index) => {
+    const day = getDay(element.date);
+    const date = getDate(element.date);
+    const icon = element.day.condition.icon;
+    const temp = element.day.avgtemp_c;
+    const chanceRain = element.day.daily_chance_of_rain;
+
+    createFooterComponent(day, date, icon, temp, chanceRain, index);
+  });
+  
+  initCurrent();
+}
+
+function clearFooterSection() {
+  while (footerSection.firstChild) {
+    footerSection.removeChild(footerSection.firstChild);
+  }
+}
+
+function initCurrent() {
+  const init = footerSection.childNodes[0];
+  init.style.opacity = "0.6";
+  init.style.pointerEvents = "none";
 }
 
 function getDate(date) {
@@ -66,27 +98,6 @@ function getDay(date) {
   const day = week[weekDay];
 
   return day;
-}
-
-function renderFooterComponents() {
-  clearFooterSection();
-  const days = dataBase.forecast.forecastday;
-
-  days.forEach((element, index) => {
-    const day = getDay(element.date);
-    const date = getDate(element.date);
-    const icon = element.day.condition.icon;
-    const temp = element.day.avgtemp_c;
-    const chanceRain = element.day.daily_chance_of_rain;
-
-    createFooterComponent(day, date, icon, temp, chanceRain, index);
-  });
-}
-
-function clearFooterSection() {
-  while (footerSection.firstChild) {
-    footerSection.removeChild(footerSection.firstChild);
-  }
 }
 
 export { renderFooterComponents, getDate };
