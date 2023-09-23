@@ -13,7 +13,7 @@ async function doThings(value) {
   renderHeader();
   renderMSComponents("0");
   renderAsideComponent("0");
-  renderFooterComponents();
+  renderFooterComponents("0");
   changeScale();
 }
 

@@ -55,7 +55,7 @@ function createFooterComponent(day, date, icon, temp, chanceRain, id) {
   }
 }
 
-function renderFooterComponents() {
+function renderFooterComponents(value) {
   clearFooterSection();
 
   const days = dataBase.forecast.forecastday;
@@ -73,7 +73,8 @@ function renderFooterComponents() {
     createFooterComponent(day, date, icon, temp, chanceRain, index);
   });
 
-  initCurrent();
+  initCurrent(value);
+  currentCompIndex = value;
 }
 
 function clearFooterSection() {
@@ -82,8 +83,8 @@ function clearFooterSection() {
   }
 }
 
-function initCurrent() {
-  const init = footerSection.childNodes[currentCompIndex];
+function initCurrent(value) {
+  const init = footerSection.childNodes[value];
   init.style.opacity = "0.6";
   init.style.pointerEvents = "none";
 }

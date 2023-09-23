@@ -1,6 +1,6 @@
 import { renderMSComponents } from "./createMainSection";
 import { renderAsideComponent } from "./createAsComp";
-import { initCurrent, renderFooterComponents } from "./createFooComp";
+import { renderFooterComponents } from "./createFooComp";
 import { currentCompIndex } from "./createFooComp";
 
 let farenheit = false;
@@ -25,9 +25,8 @@ function changeScale() {
     }
 
     renderMSComponents(currentCompIndex);
-    initCurrent();
     renderAsideComponent(currentCompIndex);
-    renderFooterComponents();
+    renderFooterComponents(currentCompIndex);
   });
 }
 
