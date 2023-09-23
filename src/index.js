@@ -1,12 +1,15 @@
-import { getData } from "./database";
-import { doThings } from "./dom";
+import { updateMili } from "./clock.js";
+import {doThings} from "./dom.js"
 
-async function thing() {
-    await getData("maracanau");
-    doThings();
+doThings("london");
+searchOnClick();
+updateMili();
+
+function searchOnClick() {
+  const searchInput = document.querySelector("#search");
+  const btn = document.querySelector("#btn");
+
+  btn.addEventListener("click", () => {
+    doThings(searchInput.value);
+  });
 }
-
-thing();
-
-
-

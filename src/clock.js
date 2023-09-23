@@ -11,6 +11,11 @@ function setClock() {
   let m = fullDate.getMinutes();
   let s = fullDate.getSeconds();
 
+  if(isNaN(miliseconds) || miliseconds === undefined) {
+    clock.innerText = "";
+    return;
+  }
+
   if (h < 10) {
     h = `0${h}`;
   }
@@ -41,16 +46,13 @@ function getDateApi() {
 
 function updateMili() {
   setClock();
-  setTimeout(() => {
+  const timeout = setTimeout(() => {
     miliseconds += 1000;
     updateMili();
     setClock();
   }, 1000);
 }
 
-function updateClock() {
-  getDateApi();
-  updateMili();
-}
 
-export { updateClock, miliseconds };
+
+export { getDateApi, updateMili };
