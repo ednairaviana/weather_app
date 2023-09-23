@@ -40,7 +40,6 @@ function createFooterComponent(day, date, icon, temp, chanceRain, id) {
     setCurrentComp();
     renderMSComponents(index);
     renderAsideComponent(index);
-    console.log(footerSection.childNodes);
   });
 
   function setCurrentComp() {
@@ -60,13 +59,13 @@ function renderFooterComponents() {
   days.forEach((element, index) => {
     const day = getDay(element.date);
     const date = getDate(element.date);
-    const icon = element.day.condition.icon;
+    const icon = `https://${element.day.condition.icon}`;
     const temp = element.day.avgtemp_c;
     const chanceRain = element.day.daily_chance_of_rain;
 
     createFooterComponent(day, date, icon, temp, chanceRain, index);
   });
-  
+
   initCurrent();
 }
 

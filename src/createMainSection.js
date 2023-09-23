@@ -141,7 +141,7 @@ function renderMSComponents(index) {
   const target = dataBase.forecast.forecastday[index];
   const title = getDay(target.date);
   const date = getDate(target.date);
-  const icon = target.day.condition.icon;
+  const icon = `https://${target.day.condition.icon}`;
   const text = target.day.condition.text;
   let temp = target.day.avgtemp_c;
   let feelsLike = "-/-";
@@ -154,7 +154,7 @@ function renderMSComponents(index) {
   const sunrise = setHour(target.astro.sunrise);
   const sunset = setHour(target.astro.sunset);
 
-  if(index === "0") {
+  if (index === "0") {
     temp = dataBase.current.temp_c;
     feelsLike = dataBase.current.feelslike_c;
     windSpeed = dataBase.current.wind_kph;

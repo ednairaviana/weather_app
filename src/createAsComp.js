@@ -43,7 +43,7 @@ function renderAsideComponent(index) {
 
   hours.forEach((element) => {
     const hour = element.time.split(" ")[1];
-    const icon = element.condition.icon;
+    const icon = `https://${element.condition.icon}`;
     const text = element.condition.text;
     const temp = element.temp_c;
     const chanceRain = element.chance_of_rain;
