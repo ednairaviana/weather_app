@@ -51,6 +51,7 @@ function getDay(date) {
 }
 
 function renderFooterComponents() {
+  clearFooterSection();
   const days = dataBase.forecast.forecastday;
 
   days.forEach((element) => {
@@ -62,6 +63,12 @@ function renderFooterComponents() {
 
     createFooterComponent(day, date, icon, temp, chanceRain);
   });
+}
+
+function clearFooterSection() {
+  while (footerSection.firstChild) {
+    footerSection.removeChild(footerSection.firstChild);
+  }
 }
 
 export { renderFooterComponents, getDate };

@@ -38,17 +38,24 @@ function createAsComp(hour, icon, text, temp, chanceRain) {
 }
 
 function renderAsideComponent(index) {
-    const hours = dataBase.forecast.forecastday[index].hour;
+  clearAsideSection();
+  const hours = dataBase.forecast.forecastday[index].hour;
 
-    hours.forEach(element => {
-        const hour = element.time.split(" ")[1];
-        const icon = element.condition.icon;
-        const text = element.condition.text;
-        const temp = element.temp_c;
-        const chanceRain = element.chance_of_rain;
+  hours.forEach((element) => {
+    const hour = element.time.split(" ")[1];
+    const icon = element.condition.icon;
+    const text = element.condition.text;
+    const temp = element.temp_c;
+    const chanceRain = element.chance_of_rain;
 
-        createAsComp(hour, icon, text, temp, chanceRain)
-    });
+    createAsComp(hour, icon, text, temp, chanceRain);
+  });
 }
 
-export {renderAsideComponent}
+function clearAsideSection() {
+  while (asideSection.firstChild) {
+    asideSection.removeChild(asideSection.firstChild);
+  }
+}
+
+export { renderAsideComponent };
