@@ -1,6 +1,7 @@
 import { renderMSComponents } from "./createMainSection";
 import { renderAsideComponent } from "./createAsComp";
-import { renderFooterComponents } from "./createFooComp";
+import { initCurrent, renderFooterComponents } from "./createFooComp";
+import { currentCompIndex } from "./createFooComp";
 
 let farenheit = false;
 
@@ -19,8 +20,9 @@ function changeScale() {
             dot.classList.add("dot-click");
         }
 
-        renderMSComponents("0");
-        renderAsideComponent("0");
+        renderMSComponents(currentCompIndex);
+        initCurrent();
+        renderAsideComponent(currentCompIndex);
         renderFooterComponents();
     })
 }

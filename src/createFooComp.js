@@ -4,6 +4,7 @@ import { renderAsideComponent } from "./createAsComp";
 import { farenheit } from "./changeScale";
 
 const footerSection = document.querySelector(".footer-section");
+let currentCompIndex = "0"
 
 function createFooterComponent(day, date, icon, temp, chanceRain, id) {
   const footerComponent = document.createElement("div");
@@ -41,6 +42,7 @@ function createFooterComponent(day, date, icon, temp, chanceRain, id) {
     setCurrentComp();
     renderMSComponents(index);
     renderAsideComponent(index);
+    currentCompIndex = index;
   });
 
   function setCurrentComp() {
@@ -81,7 +83,7 @@ function clearFooterSection() {
 }
 
 function initCurrent() {
-  const init = footerSection.childNodes[0];
+  const init = footerSection.childNodes[currentCompIndex];
   init.style.opacity = "0.6";
   init.style.pointerEvents = "none";
 }
@@ -104,4 +106,4 @@ function getDay(date) {
   return day;
 }
 
-export { renderFooterComponents, getDate };
+export { renderFooterComponents, getDate, currentCompIndex, initCurrent };
