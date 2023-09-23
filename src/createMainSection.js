@@ -118,13 +118,13 @@ function createMSComponents(
 
 function getDay(date) {
   const week = [
-    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
+    "Sunday",
   ];
   const weekDay = new Date(date).getDay();
   const day = week[weekDay];
@@ -133,8 +133,8 @@ function getDay(date) {
 }
 
 function setHour(hour) {
-    const arHour = hour.split(" ");
-    return `${arHour[0]}<span class="_small">${arHour[1]}</span>`;
+  const arHour = hour.split(" ");
+  return `${arHour[0]}<span class="_small">${arHour[1]}</span>`;
 }
 
 function renderMSComponents() {

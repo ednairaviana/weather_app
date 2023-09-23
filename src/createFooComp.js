@@ -43,7 +43,7 @@ function getDate(date) {
 }
 
 function getDay(date) {
-  const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const week = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const weekDay = new Date(date).getDay();
   const day = week[weekDay];
 
